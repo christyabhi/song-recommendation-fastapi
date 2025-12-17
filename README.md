@@ -61,7 +61,7 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 
 🌐 API Endpoints
-# Root Endpoint
+Root Endpoint
 GET /
 
 Response:
@@ -70,7 +70,7 @@ Response:
   "message": "Song Recommendation API"
 }
 
-# Recommendation Endpoint
+Recommendation Endpoint
 POST /recommendation
 
 Request Body:
@@ -93,7 +93,7 @@ Response:
 
 
 
-# 🧪 API Testing
+🧪 API Testing
 
 Swagger UI:
 👉 http://127.0.0.1:8000/docs
@@ -103,7 +103,7 @@ Use POST request with JSON body
 
 
 
-# 📌 Notes
+📌 Notes
 
 This is a content-based recommender
 
@@ -113,13 +113,13 @@ Large dataset (~57k songs) handled efficiently
 
 
 
-# 👨‍💻 Author
+👨‍💻 Author
 ABHISHEK (christyabhi)
 Electrical and electronic engineer | AI Enthusiast | Beginner Data Analyst 🚀
 
 
 
-# ⭐ Acknowledgements
+⭐ Acknowledgements
 
 DevTown Bootcamp
 
