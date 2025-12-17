@@ -6,6 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 from fastapi.middleware.cors import CORSMiddleware
 import difflib
+import gradio as gr
 
 app = FastAPI()             # Initializing my app as FastAPI
 app.add_middleware(
@@ -85,3 +86,28 @@ def recommend(request: SongRequest):
         "matched_songs": close_match,
         "recommendations": recommendations
     }
+
+# gradio
+
+
+def gradio_recommend(song_name):
+    result = recommend(SongRequest(song=song_name))
+
+    if "error" in result:
+        return result["error"]
+
+    return "\n".join(result["recommendations"])
+
+
+demo = gr.Interface(
+    fn=gradio_recommend,
+    inputs=gr.Textbox(
+        label="Enter a song name",
+        placeholder="e.g. Shape of You"
+    ),
+    outputs=gr.Textbox(label="Recommended Songs"),
+    title="🎵 Song Recommendation System",
+    description="Type a song name and get similar song recommendations"
+)
+
+demo.launch()
