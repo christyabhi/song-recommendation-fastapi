@@ -16,7 +16,7 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-songs_data = pd.read_csv("spotify_millsongdata.csv")
+songs_data = pd.read_csv("potify_millsongdata_small.csv")
 
 selected_features = ['artist', 'song', 'text']
 
